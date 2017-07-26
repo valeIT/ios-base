@@ -21,9 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }()
   var window: UIWindow?
   
+  override init() {
+    super.init()
+    addObserver(self, forKeyPath: #keyPath(window.rootViewController), options: .new, context: nil)
+  }
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-
+    
     // -Facebook
     FBSDKSettings.setAppID(ConfigurationManager.getValue(for: "FacebookKey"))
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -34,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
       self.window?.rootViewController = vc
     }
-    
     return true
   }
   
@@ -74,5 +78,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  }
+  
+  override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+    //Cast to your desired ViewController to detect, in this case could be HomeViewController
+    //In case no cast specified, the observer will detect the very first rootVC set from the app.
+    if let firstRoot = window?.rootViewController, keyPath == #keyPath(window.rootViewController) {
+      //FIRST ROOT VIEW CONTROLLER
+      print(firstRoot)
+      //Remove observer if all you need is to know about the first VC
+      removeObserver(self, forKeyPath: #keyPath(window.rootViewController))
+      
+      //Do what you want:
+      //-Send Notification
+      //-Navigate some screen
+      //etc
+    }
   }
 }
