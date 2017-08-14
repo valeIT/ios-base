@@ -20,6 +20,8 @@
 		9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AA3981ED35007005A4D26 /* SignInViewController.swift */; };
 		9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AA39A1ED35013005A4D26 /* SignUpViewController.swift */; };
 		9B3AA3A11ED4D014005A4D26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */; };
+		9B50B45D1F420AB40017CEF9 /* PaginatedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50B45B1F420AB40017CEF9 /* PaginatedTableView.swift */; };
+		9B50B45E1F420AB40017CEF9 /* PaginatedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B50B45C1F420AB40017CEF9 /* PaginatedCollectionView.swift */; };
 		9B715A461E28083600C0C039 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B715A451E28083600C0C039 /* PlaceholderTextView.swift */; };
 		9B71D6A020976E6800DCBBBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B71D69F20976E6800DCBBBD /* Constants.swift */; };
 		9B766D332092536000A28FFA /* LogoutSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B766D322092536000A28FFA /* LogoutSuccess.json */; };
@@ -80,6 +82,8 @@
 		9B3AA39A1ED35013005A4D26 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9B3AA3A01ED4D014005A4D26 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B5AFADA1C7205EC002347D6 /* ios-base.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-base.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B50B45B1F420AB40017CEF9 /* PaginatedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedTableView.swift; sourceTree = "<group>"; };
+		9B50B45C1F420AB40017CEF9 /* PaginatedCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatedCollectionView.swift; sourceTree = "<group>"; };
 		9B715A451E28083600C0C039 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9B71D69F20976E6800DCBBBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B766D322092536000A28FFA /* LogoutSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LogoutSuccess.json; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 		E8290BFB1D832D4100599960 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B50B45B1F420AB40017CEF9 /* PaginatedTableView.swift */,
+				9B50B45C1F420AB40017CEF9 /* PaginatedCollectionView.swift */,
 				9B715A451E28083600C0C039 /* PlaceholderTextView.swift */,
 			);
 			path = Views;
@@ -504,9 +510,11 @@
 				9B3AA3991ED35007005A4D26 /* SignInViewController.swift in Sources */,
 				E8FBB1BF1DD21A32000D6740 /* Session.swift in Sources */,
 				0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */,
+				9B50B45D1F420AB40017CEF9 /* PaginatedTableView.swift in Sources */,
 				9B77E0731E2FB6350020E450 /* User.swift in Sources */,
 				FA54D5881E11C59600F0DBEA /* FirstViewController.swift in Sources */,
 				FABDC9221EE1EB2B000DDAC3 /* ConfigurationManager.swift in Sources */,
+				9B50B45E1F420AB40017CEF9 /* PaginatedCollectionView.swift in Sources */,
 				9B0C72761C738D3400BAF3B1 /* UserAPI.swift in Sources */,
 				9BE3669D1F101737007CAECD /* MultipartMedia.swift in Sources */,
 				9B3AA39B1ED35013005A4D26 /* SignUpViewController.swift in Sources */,
