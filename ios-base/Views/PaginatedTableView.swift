@@ -5,7 +5,6 @@
 //  Created by German Lopez on 3/22/16.
 //  Copyright © 2016 TopTier labs. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
@@ -21,7 +20,7 @@ enum PagingDirectionType: Int {
 }
 
 class PaginatedTableView: UITableView {
-
+  
   var currentPage = 1
   var isLoading = false
   //  This will be handled automatically taking into account newElements of updateDelegate completion
@@ -69,7 +68,7 @@ class PaginatedTableView: UITableView {
 }
 
 extension PaginatedTableView : UIScrollViewDelegate {
-
+  
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     if direction == .atBottom {
       if didScrollBeyondTop() {
