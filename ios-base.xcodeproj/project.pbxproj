@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A142E231FB09977004DD22C /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A142E221FB09977004DD22C /* FirstViewModel.swift */; };
+		0A142E241FB09F70004DD22C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9108B21FACDEBD00534986 /* HomeViewModel.swift */; };
+		0A142E251FB09F70004DD22C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9108B41FACDEBD00534986 /* SignInViewModel.swift */; };
+		0A142E261FB09F70004DD22C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9108B51FACDEBD00534986 /* SignUpViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
 		9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */; };
@@ -60,7 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A142E221FB09977004DD22C /* FirstViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		0A9108B21FACDEBD00534986 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0A9108B41FACDEBD00534986 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		0A9108B51FACDEBD00534986 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		0ABFB8911FA366D90098F751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0ABFB8941FA366EA0098F751 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0ABFB8961FA366EC0098F751 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -128,10 +136,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9108B11FACDEBD00534986 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0A142E221FB09977004DD22C /* FirstViewModel.swift */,
+				0A9108B21FACDEBD00534986 /* HomeViewModel.swift */,
+				0A9108B41FACDEBD00534986 /* SignInViewModel.swift */,
+				0A9108B51FACDEBD00534986 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9B0C72511C738C3100BAF3B1 /* ios-base */ = {
 			isa = PBXGroup;
 			children = (
 				9B8D306720AB45160050697F /* Resources */,
+				0A9108B11FACDEBD00534986 /* ViewModels */,
 				E8290BFC1D832D6400599960 /* Extensions */,
 				9BFA84EF1C7767DD009F64E4 /* Helpers */,
 				9BDA91E01C7390D30003877D /* Manager */,
@@ -491,12 +511,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A142E241FB09F70004DD22C /* HomeViewModel.swift in Sources */,
+				0A142E251FB09F70004DD22C /* SignInViewModel.swift in Sources */,
+				0A142E261FB09F70004DD22C /* SignUpViewModel.swift in Sources */,
 				E8290BFE1D832D9200599960 /* UIViewExtension.swift in Sources */,
 				9BD409101CE9F19E005223C9 /* UIHelper.swift in Sources */,
 				E8B30E021E72FF8000131DCF /* UIStoryboardExtension.swift in Sources */,
 				9B3AA3A11ED4D014005A4D26 /* HomeViewController.swift in Sources */,
 				9B77E0751E2FB66F0020E450 /* UserDataManager.swift in Sources */,
 				9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */,
+				0A142E231FB09977004DD22C /* FirstViewModel.swift in Sources */,
 				9BD01E361F01641E007255E3 /* DictionaryExtension.swift in Sources */,
 				E8290C021D8330A800599960 /* StringExtension.swift in Sources */,
 				9B8D307020AB47E90050697F /* JSONEncodingExtension.swift in Sources */,

@@ -10,10 +10,13 @@ import UIKit
 import FBSDKLoginKit
 
 class FirstViewController: UIViewController {
+  
   // MARK: - Outlets
   @IBOutlet weak var facebookSign: UIButton!
   @IBOutlet weak var signIn: UIButton!
   @IBOutlet weak var signUp: UIButton!
+
+  let viewModel = FirstViewModel()
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -25,7 +28,7 @@ class FirstViewController: UIViewController {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: true)
   }
-
+  
   // MARK: - Actions
   @IBAction func facebookLogin() {
     let facebookKey = ConfigurationManager.getValue(for: "FacebookKey")
@@ -61,12 +64,7 @@ class FirstViewController: UIViewController {
 
   // MARK: Facebook callback methods
   func facebookLoginRequestSucceded() {
-    //Optionally store params (facebook user data) locally.
-    guard FBSDKAccessToken.current() != nil else {
-      return
-    }
-    UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString,
-     success: { 
+    viewModel.facebookLogin(success: {
       UIApplication.hideNetworkActivity()
       self.performSegue(withIdentifier: "goToMainView", sender: nil)
     }, failure: { error in

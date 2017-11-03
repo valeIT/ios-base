@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController {
   // MARK: - Outlets
   
   @IBOutlet weak var welcomeLabel: UILabel!
   @IBOutlet weak var logOut: UIButton!
+  var viewModel = HomeViewModel()
+  var disposeBag = DisposeBag()
+
   
   // MARK: - Lifecycle Events
   override func viewDidLoad() {
@@ -31,12 +35,14 @@ class HomeViewController: UIViewController {
 
   @IBAction func tapOnLogOutButton(_ sender: Any) {
     UIApplication.showNetworkActivity()
-    UserAPI.logout({
-      self.logOutResponse()
-    }, failure: { error in
-      self.logOutResponse()
+    UIApplication.showNetworkActivity()
+    viewModel.logout(success: {
+      UIApplication.hideNetworkActivity()
+      UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateInitialViewController()
+    }) {(error) -> Void in
+      UIApplication.hideNetworkActivity()
       print(error)
-    })
+    }
   }
   
   func logOutResponse() {

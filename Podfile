@@ -4,6 +4,8 @@ use_frameworks!
 target 'ios-base' do
   pod 'Alamofire', '~> 4.7.2'
   pod 'IQKeyboardManagerSwift', '~> 6.0.1'
+  pod 'RxSwift',    '~> 3.6'
+  pod 'RxCocoa',    '~> 3.6'
 
   # FB SDK ---
   pod 'FBSDKCoreKit', '~> 4.33.0'

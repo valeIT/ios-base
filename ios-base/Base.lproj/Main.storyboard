@@ -115,9 +115,9 @@ RS iOS BASE.</string>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="facebookSign" destination="3he-61-Jm3" id="tz3-o6-lDl"/>
-                        <outlet property="signIn" destination="OVq-bX-pA7" id="PMG-yl-8ea"/>
-                        <outlet property="signUp" destination="EN8-2n-nei" id="mGt-dJ-RXu"/>
+                        <outlet property="facebookSign" destination="3he-61-Jm3" id="Gdx-d7-Rbd"/>
+                        <outlet property="signIn" destination="OVq-bX-pA7" id="0rQ-O9-Bpj"/>
+                        <outlet property="signUp" destination="EN8-2n-nei" id="ONY-0h-7TD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,7 +138,7 @@ RS iOS BASE.</string>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbs-uB-Nr7">
                                 <rect key="frame" x="87" y="562" width="201" height="45"/>
-                                <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76094285100000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="SignInButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="9up-t4-2oL"/>
@@ -148,9 +148,9 @@ RS iOS BASE.</string>
                                 <state key="normal" title="LOG IN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapOnSignInButton:" destination="8qd-iW-5fg" eventType="touchUpInside" id="W66-SR-pZi"/>
-                                </connections>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGW-mB-J78">
                                 <rect key="frame" x="32" y="289.5" width="311" height="40"/>
@@ -332,7 +332,7 @@ RS iOS BASE.</string>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-MA-2oV">
                                 <rect key="frame" x="87" y="570" width="201" height="45"/>
-                                <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76094285100000003" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="SignUpButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="T0h-Xp-PGv"/>
@@ -342,9 +342,9 @@ RS iOS BASE.</string>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="tapOnSignUpButton:" destination="1Oa-ww-vdW" eventType="touchUpInside" id="4ez-s0-Fo5"/>
-                                </connections>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaK-dC-F7z">
                                 <rect key="frame" x="32" y="104" width="109.5" height="38.5"/>
@@ -380,6 +380,7 @@ RS iOS BASE.</string>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="emailField" destination="xYV-eE-Ila" id="eJu-Ky-1eT"/>
+                        <outlet property="passwordConfirmationField" destination="v9r-co-4vM" id="bVh-xp-akw"/>
                         <outlet property="passwordField" destination="GqP-oe-fcZ" id="U48-eO-YFg"/>
                         <outlet property="signUp" destination="oRD-MA-2oV" id="FVU-88-BaX"/>
                     </connections>

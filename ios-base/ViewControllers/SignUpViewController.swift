@@ -7,17 +7,65 @@
 //
 
 import UIKit
+import RxSwift
 
 class SignUpViewController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var signUp: UIButton!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var passwordConfirmationField: UITextField!
+  var viewModel = SignUpViewModel()
+  var disposeBag = DisposeBag()
   
   // MARK: - Lifecycle Events
   override func viewDidLoad() {
     super.viewDidLoad()
     signUp.setRoundBorders(22)
+    
+    //These fields will be validated after textfielddidendediting
+    emailField.rx.controlEvent(.editingDidEnd)
+      .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.email.value = self.emailField.text!
+        
+      }).disposed(by: disposeBag)
+    
+    passwordField.rx.controlEvent(.editingDidEnd)
+      .subscribe(onNext: { [unowned self] _ in
+        self.viewModel.password.value = self.passwordField.text!
+        
+      }).disposed(by: disposeBag)
+    
+    //This field will be validated during textfieldtextdidchange
+    passwordConfirmationField.rx.text.orEmpty
+      .bind(to: viewModel.passwordConfirmation)
+      .disposed(by: disposeBag)
+    
+    viewModel.isValid
+      .bind(onNext: { [weak self] isValid in
+        self?.signUp.isEnabled = isValid
+      })
+      .disposed(by: disposeBag)
+    
+    signUp.rx.tap
+      .bind(onNext: { _ in
+        UIApplication.showNetworkActivity()
+        self.viewModel.signUpButtonDidTap(success: {
+          UIApplication.hideNetworkActivity()
+          UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
+        }) { (error) in
+          UIApplication.hideNetworkActivity()
+          self.showMessage(title: "Error", message: error.localizedDescription)
+          print(error)
+        }
+      })
+      .disposed(by: disposeBag)
+    
+//    viewModel.error.asObservable()
+//      .bind(onNext: { [weak self] error in
+//        self?.errorText.text = error
+//      })
+//      .disposed(by: disposeBag)
   }
   
   override func viewWillAppear(_ animated: Bool) {
