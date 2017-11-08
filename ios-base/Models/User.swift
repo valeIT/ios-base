@@ -49,8 +49,4 @@ class User: Codable {
     email = try container.decode(String.self, forKey: .email)
     image = URL(string: try container.decodeIfPresent(String.self, forKey: .image) ?? "")
   }
-  
-  class func parseList(fromJSON json: JSON) -> [User] {
-    return json.arrayValue.map({ User.parse(fromJSON: $0) })
-  }
 }

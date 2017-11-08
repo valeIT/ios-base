@@ -115,22 +115,4 @@ class UserAPI {
       failure(error)
     })
   }
-  
-  class func getUsers(_ success: @escaping (_ users: [User]) -> Void, failure: @escaping (_ error: Error) -> Void) {
-    APIClient.sendGetRequest("http://private-c4ec4-iostest8.apiary-mock.com/users", success: { (responseObject) in
-      let json = JSON(responseObject)
-      success(User.parseList(fromJSON: json["users"]))
-    }) { (error) in
-      failure(error)
-    }
-  }
-  
-  class func getUser(userId: Int, success: @escaping (_ user: User) -> Void, failure: @escaping (_ error: Error) -> Void) {
-    APIClient.sendGetRequest("http://private-c4ec4-iostest8.apiary-mock.com/users/\(userId)", success: { (responseObject) in
-      let json = JSON(responseObject)
-      success(User.parse(fromJSON: json))
-    }) { (error) in
-      failure(error)
-    }
-  }
 }

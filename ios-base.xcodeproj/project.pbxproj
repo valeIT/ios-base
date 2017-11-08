@@ -13,6 +13,7 @@
 		0A142E261FB09F70004DD22C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9108B51FACDEBD00534986 /* SignUpViewModel.swift */; };
 		0A6990351F9F82A300F4BAC7 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6990341F9F82A300F4BAC7 /* UIApplicationExtension.swift */; };
 		0ABFB8901FA366D90098F751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFB8921FA366D90098F751 /* Main.storyboard */; };
+		9B02C38C20BC64F4002B31B8 /* TestCaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02C38B20BC64F4002B31B8 /* TestCaseExtension.swift */; };
 		9B0C72711C738D3400BAF3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */; };
 		9B0C72721C738D3400BAF3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */; };
 		9B0C72741C738D3400BAF3B1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C726C1C738D3400BAF3B1 /* APIClient.swift */; };
@@ -72,6 +73,7 @@
 		0ABFB8911FA366D90098F751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0ABFB8941FA366EA0098F751 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0ABFB8961FA366EC0098F751 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		9B02C38B20BC64F4002B31B8 /* TestCaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCaseExtension.swift; sourceTree = "<group>"; };
 		9B0C72691C738D3400BAF3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		9B0C726A1C738D3400BAF3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B0C726C1C738D3400BAF3B1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = APIClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				9B71D69F20976E6800DCBBBD /* Constants.swift */,
+				9B02C38B20BC64F4002B31B8 /* TestCaseExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -413,7 +416,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "TopTier labs";
 				TargetAttributes = {
 					9B2BF7281EBB9AB5001638C4 = {
@@ -500,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B71D6A020976E6800DCBBBD /* Constants.swift in Sources */,
+				9B02C38C20BC64F4002B31B8 /* TestCaseExtension.swift in Sources */,
 				9B90C3A71ECB4A8A00FBE2FB /* SignInTests.swift in Sources */,
 				9B90C3A81ECB4A8A00FBE2FB /* SignUpTests.swift in Sources */,
 				9B2BF73C1EBBA30B001638C4 /* KIFExtensions.swift in Sources */,
@@ -649,14 +653,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -698,14 +708,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -792,14 +808,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

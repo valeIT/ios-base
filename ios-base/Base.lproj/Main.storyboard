@@ -139,7 +139,7 @@ RS iOS BASE.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbs-uB-Nr7">
                                 <rect key="frame" x="87" y="562" width="201" height="45"/>
                                 <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="SignInButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignInButton" label="SignInButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="9up-t4-2oL"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="201" id="LOr-Hn-SLJ"/>
@@ -333,7 +333,7 @@ RS iOS BASE.</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-MA-2oV">
                                 <rect key="frame" x="87" y="570" width="201" height="45"/>
                                 <color key="backgroundColor" red="0.1831054688" green="0.1831054688" blue="0.1831054688" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="SignUpButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="SignUpButton" label="SignUpButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="T0h-Xp-PGv"/>
                                     <constraint firstAttribute="width" constant="201" id="T8Y-N8-u1a"/>

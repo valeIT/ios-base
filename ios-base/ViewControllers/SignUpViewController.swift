@@ -61,11 +61,6 @@ class SignUpViewController: UIViewController {
       })
       .disposed(by: disposeBag)
     
-//    viewModel.error.asObservable()
-//      .bind(onNext: { [weak self] error in
-//        self?.errorText.text = error
-//      })
-//      .disposed(by: disposeBag)
   }
   
   override func viewWillAppear(_ animated: Bool) {

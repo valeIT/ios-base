@@ -1,6 +1,6 @@
 //
 //  LogoutViewModel.swift
-//  swift-base
+//  ios-base
 //
 //  Created by Fernanda Toledo on 8/10/17.
 //  Copyright © 2017 TopTier labs. All rights reserved.

@@ -44,33 +44,24 @@ class SignUpTests: KIFTestCase {
   // MARK: - Tests
   
   func testSignUpEmptyUsernameError() {
-    stubUnauthorizedNewUser()
-    
     tester().enterText("name", intoViewWithAccessibilityIdentifier: "NameTextField")
     tester().enterText("password", intoViewWithAccessibilityIdentifier: "PasswordTextField")
     tester().enterText("password", intoViewWithAccessibilityIdentifier: "ConfirmPasswordTextField")
-    tester().tapView(withAccessibilityIdentifier: "SignUpButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignUpButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
   
   func testSignUpMatchPasswordError() {
-    stubUnauthorizedNewUser()
-    
     tester().enterText("name", intoViewWithAccessibilityIdentifier: "NameTextField")
-    tester().enterText("username", intoViewWithAccessibilityIdentifier: "UsernameTextField")
-    tester().enterText("password", intoViewWithAccessibilityIdentifier: "PasswordTextField")
+    tester().enterText("johndoe@mail.com", intoViewWithAccessibilityIdentifier: "UsernameTextField")
+    tester().enterText("123456789", intoViewWithAccessibilityIdentifier: "PasswordTextField")
     tester().enterText("differentPassword", intoViewWithAccessibilityIdentifier: "ConfirmPasswordTextField")
-    tester().tapView(withAccessibilityIdentifier: "SignUpButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignUpButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
   
   func testSignUpEmptyFieldsError() {
-    stubUnauthorizedNewUser()
-    
-    tester().tapView(withAccessibilityIdentifier: "SignUpButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignUpButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
   
@@ -81,9 +72,9 @@ class SignUpTests: KIFTestCase {
     }
     
     tester().enterText("name", intoViewWithAccessibilityIdentifier: "NameTextField")
-    tester().enterText("username", intoViewWithAccessibilityIdentifier: "UsernameTextField")
-    tester().enterText("password", intoViewWithAccessibilityIdentifier: "PasswordTextField")
-    tester().enterText("password", intoViewWithAccessibilityIdentifier: "ConfirmPasswordTextField")
+    tester().enterText("johndoe@mail.com", intoViewWithAccessibilityIdentifier: "UsernameTextField")
+    tester().enterText("123456789", intoViewWithAccessibilityIdentifier: "PasswordTextField")
+    tester().enterText("123456789", intoViewWithAccessibilityIdentifier: "ConfirmPasswordTextField")
     tester().tapView(withAccessibilityIdentifier: "SignUpButton")
     tester().waitForView(withAccessibilityIdentifier: "AfterLoginSignupView")
     XCTAssertEqual(SessionManager.validSession, true)
@@ -92,11 +83,6 @@ class SignUpTests: KIFTestCase {
   }
   
   // MARK: - Helper method
-  
-  func showErrorMessage() {
-    tester().waitForView(withAccessibilityLabel: "Error")
-    tester().tapView(withAccessibilityLabel: "Ok")
-  }
   
   func stubUnauthorizedNewUser() {
     stub(condition: isPath("/api/v1/users")) { _ in

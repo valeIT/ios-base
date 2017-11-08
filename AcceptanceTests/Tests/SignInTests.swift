@@ -44,28 +44,19 @@ class SignInTests: KIFTestCase {
   // MARK: - Tests
   
   func testSignInEmptyPasswordError() {
-    stubUnauthorizedUser()
-    
     tester().enterText("username", intoViewWithAccessibilityIdentifier: "UsernameTextField")
-    tester().tapView(withAccessibilityIdentifier: "SignInButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignInButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
   
   func testSignInEmptyUsernameError() {
-    stubUnauthorizedUser()
-
     tester().enterText("password", intoViewWithAccessibilityIdentifier: "PasswordTextField")
-    tester().tapView(withAccessibilityIdentifier: "SignInButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignInButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
 
   func testSignInEmptyFieldsError() {
-   stubUnauthorizedUser()
-
-    tester().tapView(withAccessibilityIdentifier: "SignInButton")
-    showErrorMessage()
+    checkDisabledButton(withAccessibilityLabel: "SignInButton")
     XCTAssertEqual(SessionManager.validSession, false)
   }
   
@@ -85,11 +76,6 @@ class SignInTests: KIFTestCase {
   }
   
   // MARK: - Helper method
-  
-  func showErrorMessage() {
-    tester().waitForView(withAccessibilityLabel: "Error")
-    tester().tapView(withAccessibilityLabel: "Ok")
-  }
   
   func stubUnauthorizedUser() {
     stub(condition: isPath("/api/v1/users/sign_in")) { _ in

@@ -1,6 +1,6 @@
 //
 //  SignUpViewModel.swift
-//  swift-base
+//  ios-base
 //
 //  Created by Fernanda Toledo on 8/10/17.
 //  Copyright © 2017 TopTier labs. All rights reserved.
@@ -46,10 +46,6 @@ struct SignUpViewModel {
     return email.asObservable().distinctUntilChanged().map {
       $0.isEmailFormatted()
     }
-    
-//    return Observable.combineLatest(self.email.asObservable(), self.emailConfirmation.asObservable()) { (email, emailConfirmation) in
-//      return email.isEmailFormatted() && email == emailConfirmation
-//    }
   }
   
   func signUpButtonDidTap(success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {

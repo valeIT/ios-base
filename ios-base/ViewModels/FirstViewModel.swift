@@ -1,6 +1,6 @@
 //
 //  FirstViewModel.swift
-//  swift-base
+//  ios-base
 //
 //  Created by Fernanda Toledo on 8/11/17.
 //  Copyright © 2017 TopTier labs. All rights reserved.
@@ -17,7 +17,7 @@ class FirstViewModel {
     guard FBSDKAccessToken.current() != nil else {
       return
     }
-    UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString, success: { _ -> Void in
+    UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString, success: {
       success()
     }) { (error) -> Void in
       failure(error)

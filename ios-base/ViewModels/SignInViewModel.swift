@@ -1,6 +1,6 @@
 //
 //  LoginViewModel.swift
-//  swift-base
+//  ios-base
 //
 //  Created by Fernanda Toledo on 8/8/17.
 //  Copyright © 2017 TopTier labs. All rights reserved.
@@ -21,7 +21,7 @@ struct SignInViewModel {
   
   func loginButtonDidTap(success: @escaping () -> Void, failure: @escaping (_ error: Error) -> Void) {
     //Login with "rootstrap@gmail.com"/"123456789" to success
-    UserAPI.login(email.value != "" ? email.value : "rootstrap@gmail.com", password: password.value != "" ? password.value : "123456789", success: { (_) in
+    UserAPI.login(email.value != "" ? email.value : "rootstrap@gmail.com", password: password.value != "" ? password.value : "123456789", success: {
       self.signedIn.value = true
       success()
     }) { (error) in
