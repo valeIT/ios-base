@@ -27,15 +27,15 @@ class SignInViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func tapOnSignInButton(_ sender: Any) {
-    UIApplication.showNetworkActivity()
+    showSpinner()
     let email = !emailField.text!.isEmpty ? emailField.text : "rootstrap@gmail.com"
     let password = !passwordField.text!.isEmpty ? passwordField.text : "123456789"
     
     UserAPI.login(email!, password: password!, success: { 
-      UIApplication.hideNetworkActivity()
+      self.hideSpinner()
       UIApplication.shared.keyWindow?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController")
     }, failure: { error in
-      UIApplication.hideNetworkActivity()
+      self.hideSpinner()
       self.showMessage(title: "Error", message: error.localizedDescription)
       print(error)
     })

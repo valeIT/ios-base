@@ -30,8 +30,7 @@ class FirstViewController: UIViewController {
   @IBAction func facebookLogin() {
     let facebookKey = ConfigurationManager.getValue(for: "FacebookKey")
     assert(facebookKey?.isEmpty ?? false, "Value for FacebookKey not found")
-    
-    UIApplication.showNetworkActivity()
+    showSpinner()
     let fbLoginManager = FBSDKLoginManager()
     //Logs out before login, in case user changes facebook accounts
     fbLoginManager.logOut()
@@ -56,21 +55,22 @@ class FirstViewController: UIViewController {
     if !cancelled {
       self.showMessage(title: "Oops..", message: reason)
     }
-    UIApplication.hideNetworkActivity()
+    hideSpinner()
   }
 
   // MARK: Facebook callback methods
   func facebookLoginRequestSucceded() {
     //Optionally store params (facebook user data) locally.
     guard FBSDKAccessToken.current() != nil else {
+      hideSpinner()
       return
     }
     UserAPI.loginWithFacebook(token: FBSDKAccessToken.current().tokenString,
-     success: { 
-      UIApplication.hideNetworkActivity()
+     success: {
+      self.hideSpinner()
       self.performSegue(withIdentifier: "goToMainView", sender: nil)
     }, failure: { error in
-      UIApplication.hideNetworkActivity()
+      self.hideSpinner()
       self.showMessage(title: "Error", message: error._domain)
     })
   }

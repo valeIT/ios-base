@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import IQKeyboardManagerSwift
+import MBProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return appD
   }()
   var window: UIWindow?
+  var spinner: MBProgressHUD!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -29,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     
     IQKeyboardManager.shared.enable = true
+    spinner = UIHelper.initSpinner()
     
     if SessionManager.validSession {
       let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
