@@ -2,6 +2,10 @@
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/rootstrap/ios-base.svg)](https://codeclimate.com/github/rootstrap/ios-base)
 [![License](https://img.shields.io/github/license/rootstrap/ios-base.svg)](https://github.com/rootstrap/ios-base/blob/master/LICENSE.md)
 
+### ⚠️ DEPRECATION NOTICE ⚠️
+If you want to use MVC pattern have in mind that this branch is no longer maitained. 
+We highly recommend to use the master branch.
+
 # iOS Base Template
 **iOS base** is a boilerplate project created by Rootstrap for new projects using Swift 4.1. The main objective is helping any new projects jump start into feature development by providing a handful of functionalities.
 
